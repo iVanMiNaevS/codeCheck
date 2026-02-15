@@ -1,0 +1,10 @@
+import { createContext, useContext } from "react";
+import { RootStore } from "./rootStore";
+
+export const StoreContext = createContext<RootStore | null>(null);
+
+export const useStore = () => {
+	const store = useContext(StoreContext);
+	if (!store) throw new Error("Store not found");
+	return store;
+};

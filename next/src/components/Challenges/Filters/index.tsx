@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles/filters.module.scss";
-export const Filters = () => {
+import { observer } from "mobx-react-lite";
+export const Filters = observer(() => {
 	return <div className={styles.filters}></div>;
-};
+});
