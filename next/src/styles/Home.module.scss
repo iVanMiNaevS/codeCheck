@@ -1,4 +1,4 @@
-@import "../styles/colors.scss";
+@use "../styles/colors.scss";
 .container {
 	width: 100%;
 	display: flex;
@@ -13,12 +13,12 @@
 	a {
 		padding: 20px 25px;
 		border-radius: 10px;
-		background: $yellow;
+		background: colors.$yellow;
 		cursor: pointer;
 		transition: 0.3s;
 		font-size: 28px;
 		&:hover {
-			background: $yellow-light;
+			background: colors.$yellow-light;
 		}
 	}
 }

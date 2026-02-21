@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "challenges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::challenge.challenge",
+      "mappedBy": "tags"
+    },
+    "slug": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

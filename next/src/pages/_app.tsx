@@ -1,13 +1,6 @@
-import { initializeStore } from "@/stores";
-import { StoreContext } from "@/stores/context";
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-	const store = initializeStore();
-	return (
-		<StoreContext.Provider value={store}>
-			<Component {...pageProps} />;
-		</StoreContext.Provider>
-	);
+	return <Component {...pageProps} />;
 }

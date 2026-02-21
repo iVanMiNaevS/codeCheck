@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "languages",
+  "info": {
+    "singularName": "language",
+    "pluralName": "languages",
+    "displayName": "Language"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "challenges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::challenge.challenge",
+      "mappedBy": "languages"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

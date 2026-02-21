@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modes",
+  "info": {
+    "singularName": "mode",
+    "pluralName": "modes",
+    "displayName": "Mode"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": false
+    },
+    "challenges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::challenge.challenge",
+      "mappedBy": "mode"
+    }
+  }
+}

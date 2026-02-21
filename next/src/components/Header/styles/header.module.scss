@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@use "../../../styles/colors.scss";
 .header {
 	width: 100%;
 	display: flex;
@@ -21,12 +21,12 @@
 			font-size: 18px;
 			transition: 0.2s;
 			&:hover {
-				color: $yellow;
+				color: colors.$yellow;
 			}
 		}
 	}
 	.button {
-		background: $yellow;
+		background: colors.$yellow;
 		padding: 10px 20px;
 		border: none;
 		border-radius: 5px;
@@ -34,7 +34,7 @@
 		cursor: pointer;
 		font-size: 18px;
 		&:hover {
-			background: $yellow-light;
+			background: colors.$yellow-light;
 		}
 	}
 }

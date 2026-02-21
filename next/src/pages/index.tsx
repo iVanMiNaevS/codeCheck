@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<MainLayout>
 			<div className={styles.container}>
-				<h2>Начинём?</h2>
+				<h2>Начнём?</h2>
 				<Link href={"/challenges"}>К программированию</Link>
 			</div>
 		</MainLayout>
