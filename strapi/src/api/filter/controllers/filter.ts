@@ -14,14 +14,17 @@ export default {
 
 		ctx.body = [
 			{
+				filter: "mode",
 				title: "Сложность",
 				filters: difficulties,
 			},
 			{
+				filter: "languages",
 				title: "Язык",
 				filters: languages,
 			},
 			{
+				filter: "tags",
 				title: "Теги",
 				isMultiply: true,
 				filters: tags,

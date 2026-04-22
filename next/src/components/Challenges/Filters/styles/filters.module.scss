@@ -1,3 +1,4 @@
+@use "../../../../styles/colors.scss";
 .filters {
 	display: flex;
 	flex-direction: column;
@@ -25,5 +26,30 @@
 		border: 1px solid #36363659;
 		font-size: 1em;
 		font-weight: 300;
+	}
+}
+.filter_btn {
+	background: colors.$yellow;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	transition: 0.2s;
+	cursor: pointer;
+	font-size: 18px;
+	&:hover {
+		background: colors.$yellow-light;
+	}
+}
+
+.filter_btn_reset {
+	background: transparent;
+	padding: 10px 20px;
+	border: 1px solid colors.$yellow;
+	border-radius: 5px;
+	transition: 0.2s;
+	cursor: pointer;
+	font-size: 18px;
+	&:hover {
+		background: colors.$yellow-light;
 	}
 }

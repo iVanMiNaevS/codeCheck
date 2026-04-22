@@ -1,6 +1,7 @@
 import { Media } from "@/types/common";
 
 export type Filter = {
+	filter: string;
 	title: string;
 	isMultiply: boolean;
 	filters: {
