@@ -455,6 +455,7 @@ export interface ApiChallengeChallenge extends Struct.CollectionTypeSchema {
       'api::challenge.challenge'
     > &
       Schema.Attribute.Private;
+    manual: Schema.Attribute.RichText & Schema.Attribute.Required;
     mode: Schema.Attribute.Relation<'manyToOne', 'api::mode.mode'>;
     publishedAt: Schema.Attribute.DateTime;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;

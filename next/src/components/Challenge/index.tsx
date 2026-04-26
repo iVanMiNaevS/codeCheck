@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./styles/_challenge.module.scss";
 import { ChallengeType } from "@/types/challenges";
+import Link from "next/link";
+import Tag from "../Tag";
 
 interface challengeProps {
 	challenge: ChallengeType;
@@ -11,17 +13,15 @@ export const Challenge = (props: challengeProps) => {
 
 	return (
 		<div className={styles.chell}>
-			<h2>{challenge.title}</h2>
+			<h2><Link href={'/challenges/' + challenge.id}>{challenge.title}</Link></h2>
 			<p>{challenge.description}</p>
 			<div className={styles.chell_bottom}>
 				<div className={styles.chell_left}>
 					<div className={`${styles.chell_option} ${styles.chell_mode}`}>
-						{challenge.mode.title}
+						<Tag tag={challenge.mode.title} mode='mode'/>
 					</div>
 					{challenge.tags.map((tag) => (
-						<div key={tag.id} className={styles.chell_option}>
-							{tag.title}
-						</div>
+						<Tag tag={tag.title}/>
 					))}
 				</div>
 				<div className={styles.chell_right}>

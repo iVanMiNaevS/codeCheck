@@ -8,11 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@uiw/react-codemirror": "^4.25.9",
     "mobx": "^6.15.0",
     "mobx-react-lite": "^4.1.1",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
     "sass": "^1.97.3"
   },
   "devDependencies": {

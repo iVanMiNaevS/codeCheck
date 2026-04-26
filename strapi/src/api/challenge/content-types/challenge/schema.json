@@ -36,6 +36,10 @@
       "relation": "manyToOne",
       "target": "api::mode.mode",
       "inversedBy": "challenges"
+    },
+    "manual": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

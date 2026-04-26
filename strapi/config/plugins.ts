@@ -16,4 +16,10 @@ export default () => ({
 			},
 		},
 	},
+	"wysiwyg-react-md-editor": {
+        enabled: true,
+        config: {
+            toolbarCommands: ["title1", "strapiMediaLibrary"],
+        },
+    }
 });

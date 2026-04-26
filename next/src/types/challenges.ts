@@ -57,4 +57,5 @@ export interface ChallengeType {
 	tags: Tag[];
 	mode: Mode;
 	languages: Language[];
+	manual: string;
 }

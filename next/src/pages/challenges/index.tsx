@@ -4,7 +4,7 @@ import { GetStaticPropsResult } from "next";
 import { fetchFromStrapi } from "@/utils/fetchFromStrapi";
 import { ChallengesData, Filter } from "@/types/challenges";
 import { MainLayout } from "@/components/MainLayout";
-import ChallengesModule from "@/modules/challanges";
+import ChallengesModule from "@/modules/challangesModule";
 
 interface ChallengesProps {
 	challengesData: ChallengesData

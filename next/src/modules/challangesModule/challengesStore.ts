@@ -10,6 +10,7 @@ interface filterType {
 export class ChallengesStore {
 	filters: filterType[] = [];
 	challenges: ChallengeType[] = [];
+	private loading: boolean = false;
 
 	constructor(challenges: ChallengeType[]) {
 		this.challenges = challenges;
@@ -31,8 +32,15 @@ export class ChallengesStore {
 		}
 	}
 
+	get getLoading (){
+		return this.loading
+	}
+
 	async applyFilter() {
-		const populate = this.filters
+		console.log('d')
+		try{
+			this.loading = true
+			const populate = this.filters
 			.map((f) => {
 				if (Array.isArray(f.value)) {
 					return f.value
@@ -45,10 +53,18 @@ export class ChallengesStore {
 				return `filters[${f.filter}][slug][$eq]=${encodeURIComponent(f.value)}`;
 			})
 			.join("&");
-		const challengesPopulate =
-			"?populate[tags]=true&populate[mode]=true&populate[languages][populate][icon][fields][0]=url";
-		const filterChall = await fetchFromStrapi("challenges", `${challengesPopulate}&${populate}`);
-		this.setChallenges([...filterChall.data]);
+
+			const challengesPopulate =
+				"?populate[tags]=true&populate[mode]=true&populate[languages][populate][icon][fields][0]=url";
+
+			const filterChall = await fetchFromStrapi("challenges", `${challengesPopulate}&${populate}`);
+
+			this.setChallenges([...filterChall.data]);
+			this.loading = false
+		}catch(e){
+			console.error("Ошибка при применении фильтров: ", e)
+		}
+		
 	}
 
 	async resetFilter() {

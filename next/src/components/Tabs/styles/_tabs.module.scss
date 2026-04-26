@@ -1,0 +1,24 @@
+.container{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #dbdbdb;
+    .tab{
+        align-items: center;
+        border-bottom: 1px solid #dbdbdb;
+        color: #4a4a4a;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -1px;
+        padding: .5em 1em;
+        vertical-align: top;
+        font-size: 18px;
+        &:hover{
+            cursor: pointer;
+            border-bottom: 1px solid #a0a0a0;
+        }
+    }
+    .tab.active{
+        border-bottom-color: #485fc7;
+        color: #485fc7;
+    }
+}
