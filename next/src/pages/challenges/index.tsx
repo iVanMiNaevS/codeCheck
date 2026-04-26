@@ -1,43 +1,23 @@
-import styles from "./styles/challenges.module.scss";
 import { MainContainer } from "@/components/MainContainer";
-import { Filters } from "@/components/Challenges/Filters";
 import { observer } from "mobx-react-lite";
 import { GetStaticPropsResult } from "next";
 import { fetchFromStrapi } from "@/utils/fetchFromStrapi";
-import { ChallengeType, Filter } from "@/types/challenges";
-import { Meta } from "@/types/common";
-import { ChallengesStore } from "@/stores/challengesStore";
-import { Challenge } from "@/components/Challenges/Challenge";
+import { ChallengesData, Filter } from "@/types/challenges";
 import { MainLayout } from "@/components/MainLayout";
-import { useState } from "react";
+import ChallengesModule from "@/modules/challanges";
 
 interface ChallengesProps {
-	challengesData: {
-		data: ChallengeType[];
-		meta: Meta;
-	};
+	challengesData: ChallengesData
 	filters: Filter[];
 }
 
 const Challenges = observer((props: ChallengesProps) => {
 	const { challengesData, filters } = props;
-	const [store] = useState(() => new ChallengesStore(challengesData.data));
-
-	const challenges = store.challenges;
 
 	return (
 		<MainLayout>
 			<MainContainer>
-				<div className={styles.container}>
-					<Filters store={store} filters={filters} />
-					<div className={styles.challenges}>
-						{challenges.length !== 0 &&
-							challenges.map((chall) => {
-								return <Challenge key={chall.id} challenge={chall} />;
-							})}
-						{challenges.length === 0 && <p>Нет таких</p>}
-					</div>
-				</div>
+				<ChallengesModule challengesData={challengesData} filters={filters} />
 			</MainContainer>
 		</MainLayout>
 	);

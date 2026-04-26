@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./styles/filters.module.scss";
 import { observer } from "mobx-react-lite";
 import { Filter } from "@/types/challenges";
-import { ChallengesStore } from "@/stores/challengesStore";
-import { toJS } from "mobx";
+import { ChallengesStore } from "@/modules/challanges/challengesStore";
 
 interface filtersProps {
 	filters: Filter[];

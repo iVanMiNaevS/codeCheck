@@ -1,4 +1,9 @@
-import { Media } from "@/types/common";
+import { Media, Meta } from "@/types/common";
+
+export interface ChallengesData {
+	data: ChallengeType[];
+	meta: Meta;
+};
 
 export type Filter = {
 	filter: string;
