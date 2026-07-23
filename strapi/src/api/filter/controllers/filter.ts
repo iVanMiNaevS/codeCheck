@@ -9,7 +9,7 @@ export default {
 			}),
 			strapi.entityService.findMany("api::tag.tag", {
 				fields: ["title", "slug"],
-			}),
+			}),				
 		]);
 
 		ctx.body = [
@@ -18,7 +18,7 @@ export default {
 				title: "Сложность",
 				filters: difficulties,
 			},
-			{
+			{	
 				filter: "languages",
 				title: "Язык",
 				filters: languages,
@@ -28,7 +28,7 @@ export default {
 				title: "Теги",
 				isMultiply: true,
 				filters: tags,
-			},
+			},						
 		];
 	},
 };

@@ -1,3 +1,19 @@
+@use '../../../../styles/colors.scss';
+
 .code_editor{
     margin-top: 20px;
+}
+
+.btn_code_check{
+    margin-top: 20px;
+    background: colors.$yellow;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	transition: 0.2s;
+	cursor: pointer;
+	font-size: 18px;
+	&:hover {
+		background: colors.$yellow-light;
+	}
 }
